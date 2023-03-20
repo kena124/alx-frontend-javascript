@@ -1,9 +1,11 @@
-export default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
+import createEmployeesObject from "./11-createEmployeesObject.js";
+import createReportObject from "./12-createReportObject.js";
 
-  if (trueOrFalse) {
-    return [task, task2];
-  }
-  return [task, task2];
-}
+const employees = {
+	...createEmployeesObject("engineering", ["Bob", "Jane"]),
+	...createEmployeesObject("marketing", ["Sylvie"]),
+};
+
+const report = createReportObject(employees);
+console.log(report.allEmployees);
+console.log(report.getNumberOfDepartments(report.allEmployees));
