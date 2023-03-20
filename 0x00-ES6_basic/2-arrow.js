@@ -1,11 +1,9 @@
-import createEmployeesObject from "./11-createEmployeesObject.js";
-import createReportObject from "./12-createReportObject.js";
+export default function getNeighborhoodsList() {
+  this.sanFranciscoNeighborhoods = ['SOMA', 'Union Square'];
 
-const employees = {
-	...createEmployeesObject("engineering", ["Bob", "Jane"]),
-	...createEmployeesObject("marketing", ["Sylvie"]),
-};
-
-const report = createReportObject(employees);
-console.log(report.allEmployees);
-console.log(report.getNumberOfDepartments(report.allEmployees));
+  const self = this;
+  this.addNeighborhood = (newNeighborhood) => {
+    self.sanFranciscoNeighborhoods.push(newNeighborhood);
+    return self.sanFranciscoNeighborhoods;
+  };
+}
